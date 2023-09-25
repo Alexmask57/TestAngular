@@ -1,0 +1,29 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <p [class.errors]="form.get('login')!.invalid && (form.get('login')!.dirty || form.get('login')!.touched)">
+    <mat-form-field>
+      <mat-label>Login</mat-label>
+      <input matInput formControlName="login" name="login" placeholder="Login" required/>
+      <mat-error *ngIf="form.get('login')!.dirty && form.get('login')!.errors?.['required']"><br/>Le login est
+        obligatoire
+      </mat-error>
+    </mat-form-field>
+  </p>
+
+  <p [class.errors]="form.get('password')!.invalid && (form.get('password')!.dirty || form.get('password')!.touched)">
+    <mat-form-field >
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" name="password" placeholder="password" required/>
+      <mat-error *ngIf="form.get('password')!.dirty && form.get('password')!.errors?.['required']"><br/>Le mot de passe est
+        obligatoire
+      </mat-error>
+    </mat-form-field>
+
+    <mat-card-actions align="end">
+      <button mat-button type="button" (click)="onCancel()">Annuler</button>
+      <button mat-button type="submit" color="primary" [disabled]="submitted">Valider</button>
+    </mat-card-actions>
+
+</form>
