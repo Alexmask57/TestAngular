@@ -6,6 +6,7 @@ import {AuthService} from "../../auth/auth.service";
 import {CredentialsService} from "../../credentials.service";
 import {Router} from "@angular/router";
 import {Albums} from "./models/albums";
+import {Artist} from "./models/artist";
 
 class InfosTokenSpotify {
   token: string | null;
@@ -88,8 +89,6 @@ export class SpotifyService {
 
       }
     }));
-
-
   }
 
   private setAccessTokenFromLocalStorage() {
@@ -132,6 +131,12 @@ export class SpotifyService {
     // Endpoint reference : https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks
     return this.httpClient.get<{albums: Albums}>(
       `${this.endpoint}/v1/browse/new-releases?country=${country}&limit=${limit}&offset=${offset}`
+    );
+  }
+  getArtist(id: string) {
+    // Endpoint reference : https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks
+    return this.httpClient.get<Artist>(
+      `${this.endpoint}/v1/artists/${id}`
     );
   }
 

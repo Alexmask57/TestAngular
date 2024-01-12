@@ -1,32 +1,38 @@
 <div class="container">
 
-  <div *ngIf="onLoading">
+  <div *ngIf="onLoading" class="row">
     <div class=" col-sm-3 mb-3 mb-sm-3">
-      <app-new-release-item-loading ></app-new-release-item-loading>
+      <app-new-release-item-loading></app-new-release-item-loading>
     </div>
     <div class=" col-sm-3 mb-3 mb-sm-3">
-      <app-new-release-item-loading ></app-new-release-item-loading>
+      <app-new-release-item-loading></app-new-release-item-loading>
     </div>
     <div class=" col-sm-3 mb-3 mb-sm-3">
-      <app-new-release-item-loading ></app-new-release-item-loading>
+      <app-new-release-item-loading></app-new-release-item-loading>
     </div>
     <div class=" col-sm-3 mb-3 mb-sm-3">
-      <app-new-release-item-loading ></app-new-release-item-loading>
+      <app-new-release-item-loading></app-new-release-item-loading>
     </div>
     <div class=" col-sm-3 mb-3 mb-sm-3">
-      <app-new-release-item-loading ></app-new-release-item-loading>
+      <app-new-release-item-loading></app-new-release-item-loading>
     </div>
     <div class=" col-sm-3 mb-3 mb-sm-3">
-      <app-new-release-item-loading ></app-new-release-item-loading>
+      <app-new-release-item-loading></app-new-release-item-loading>
     </div>
     <div class=" col-sm-3 mb-3 mb-sm-3">
-      <app-new-release-item-loading ></app-new-release-item-loading>
+      <app-new-release-item-loading></app-new-release-item-loading>
     </div>
   </div>
 
   <div *ngIf="!onLoading" class="row">
-    <div *ngFor="let album of albums.items" class=" col-sm-3 mb-3 mb-sm-3">
+    <div *ngFor="let album of albums.items" class="col-sm-6 col-md-3 mb-3">
       <app-new-release-item [album]="album"></app-new-release-item>
     </div>
+    <app-paginator
+      [currentPage]="currentPage"
+      [totalPages]="totalPages"
+      [itemsPerPage]="numberToDisplay"
+      (changePage)="onChangePage($event)"
+    />
   </div>
 </div>

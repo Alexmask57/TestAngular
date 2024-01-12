@@ -23,6 +23,7 @@ import { NewReleaseListComponent } from './music/spotify/new-release-list/new-re
 import { NewReleaseItemComponent } from "./music/spotify/new-release-list/new-release-item/new-release-item.component";
 import { ArtistDetailComponent } from './music/spotify/artist-detail/artist-detail.component';
 import { NewReleaseItemLoadingComponent } from "./music/spotify/new-release-list/new-release-item-loading/new-release-item-loading.component";
+import { PaginatorComponent } from './shared/paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { NewReleaseItemLoadingComponent } from "./music/spotify/new-release-list
     NewReleaseListComponent,
     NewReleaseItemComponent,
     ArtistDetailComponent,
-    NewReleaseItemLoadingComponent
+    NewReleaseItemLoadingComponent,
+    PaginatorComponent
   ],
   imports: [
     BrowserModule,

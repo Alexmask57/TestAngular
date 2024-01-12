@@ -4,5 +4,6 @@ export class Albums {
   href: string;
   limit: number;
   next: string;
-  items: Item[]
+  items: Item[];
+  total: number;
 }

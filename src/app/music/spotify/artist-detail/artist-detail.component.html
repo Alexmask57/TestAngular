@@ -1,1 +1,20 @@
-<p>artist-detail works!</p>
+<app-loading-spinner *ngIf="onLoading"/>
+
+<div *ngIf="!onLoading">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <div class="card">
+        <img [src]="artist.images[0].url" class="card-img-top">
+        <h5 class="card-header">{{ artist.name }}</h5>
+        <div class="card-body">
+          <h5 class="card-title">
+            Genres :
+            <span *ngFor="let genre of artist.genres; last as isLast">{{ isLast ? genre: genre + ' - ' }}</span>
+          </h5>
+          <p class="card-text">Popularity : {{artist.popularity}} %</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

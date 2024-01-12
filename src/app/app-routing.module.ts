@@ -7,6 +7,8 @@ import {AppleMusicComponent} from "./music/apple-music/apple-music.component";
 import {SpotifyComponent} from "./music/spotify/spotify.component";
 import {YoutubeMusicComponent} from "./music/youtube-music/youtube-music.component";
 import {authGuard} from "./auth/auth.guard";
+import {NewReleaseListComponent} from "./music/spotify/new-release-list/new-release-list.component";
+import {ArtistDetailComponent} from "./music/spotify/artist-detail/artist-detail.component";
 
 const APP_ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,7 +18,11 @@ const APP_ROUTES: Routes = [
     canActivate: [authGuard],
     children: [
       { path: 'apple-music', component: AppleMusicComponent },
-      { path: 'spotify', component: SpotifyComponent },
+      { path: 'spotify', component: SpotifyComponent, children: [
+          { path: 'new-release-album', component: NewReleaseListComponent },
+          { path: 'artist/:id', component: ArtistDetailComponent },
+        ]
+      },
       { path: 'youtube-music', component: YoutubeMusicComponent },
     ]
   },

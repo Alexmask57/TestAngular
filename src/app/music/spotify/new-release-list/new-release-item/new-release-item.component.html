@@ -1,11 +1,11 @@
-<div class="card" style="width: 18rem;">
+<div class="card">
   <img [src]="album.images[0].url" class="card-img-top">
   <h5 class="card-header">
-    {{ album.name }}
+    <a>{{ album.name }}</a>
   </h5>
   <div class="card-body">
     <h4 class="card-title">
-      <a>{{ album.artists[0].name }}</a>
+      <a [routerLink]="['../artist', album.artists[0].id]">{{ album.artists[0].name }}</a>
     </h4>
     <p class="card-text">Nombre de musique : {{ album.total_tracks }}</p>
   </div>
