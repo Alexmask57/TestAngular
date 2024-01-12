@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div *ngIf="onLoading">
+    <div class=" col-sm-3 mb-3 mb-sm-3">
+      <app-new-release-item-loading ></app-new-release-item-loading>
+    </div>
+    <div class=" col-sm-3 mb-3 mb-sm-3">
+      <app-new-release-item-loading ></app-new-release-item-loading>
+    </div>
+    <div class=" col-sm-3 mb-3 mb-sm-3">
+      <app-new-release-item-loading ></app-new-release-item-loading>
+    </div>
+    <div class=" col-sm-3 mb-3 mb-sm-3">
+      <app-new-release-item-loading ></app-new-release-item-loading>
+    </div>
+    <div class=" col-sm-3 mb-3 mb-sm-3">
+      <app-new-release-item-loading ></app-new-release-item-loading>
+    </div>
+    <div class=" col-sm-3 mb-3 mb-sm-3">
+      <app-new-release-item-loading ></app-new-release-item-loading>
+    </div>
+    <div class=" col-sm-3 mb-3 mb-sm-3">
+      <app-new-release-item-loading ></app-new-release-item-loading>
+    </div>
+  </div>
+
+  <div *ngIf="!onLoading" class="row">
+    <div *ngFor="let album of albums.items" class=" col-sm-3 mb-3 mb-sm-3">
+      <app-new-release-item [album]="album"></app-new-release-item>
+    </div>
+  </div>
+</div>

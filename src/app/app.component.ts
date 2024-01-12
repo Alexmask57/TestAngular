@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from "../services/auth.service";
+import {AuthService} from "./auth/auth.service";
 import {Router} from "@angular/router";
+import {UserAuth} from "../models/user-auth.model";
 
 @Component({
   selector: 'app-root',
@@ -10,19 +11,10 @@ import {Router} from "@angular/router";
 export class AppComponent implements OnInit {
   title = 'TestAngular';
 
-  constructor(readonly authService: AuthService, private readonly router: Router) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-
-  }
-
-  login(){
-    this.router.navigate(['login']);
-  }
-
-  logout(){
-    this.authService.doLogout();
-    this.router.navigate(['home']);
+    this.authService.autoLogin();
   }
 
 }
