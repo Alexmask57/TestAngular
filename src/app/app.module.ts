@@ -25,6 +25,7 @@ import { ArtistDetailComponent } from './music/spotify/artist-detail/artist-deta
 import { NewReleaseItemLoadingComponent } from "./music/spotify/new-release-list/new-release-item-loading/new-release-item-loading.component";
 import { PaginatorComponent } from './shared/paginator/paginator.component';
 import { AuthorizeComponent } from './music/spotify/authorize/authorize.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AuthorizeComponent } from './music/spotify/authorize/authorize.componen
     ArtistDetailComponent,
     NewReleaseItemLoadingComponent,
     PaginatorComponent,
-    AuthorizeComponent
+    AuthorizeComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
