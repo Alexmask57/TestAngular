@@ -7,7 +7,7 @@ import {
 } from '@angular/common/http';
 import {catchError, exhaustMap, Observable, throwError} from 'rxjs';
 import {environment} from "../../../environments/environment";
-import {SpotifyService} from "./spotify.service";
+import {SpotifyService} from "./services/spotify.service";
 import {CredentialsService} from "../../credentials.service";
 
 @Injectable()

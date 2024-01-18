@@ -2,11 +2,11 @@ import {Injectable, OnInit} from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from "@angular/common/http";
 import {environment} from 'src/environments/environment';
 import {exhaustMap, from, tap, throwError} from "rxjs";
-import {AuthService} from "../../auth/auth.service";
-import {CredentialsService} from "../../credentials.service";
+import {AuthService} from "../../../auth/auth.service";
+import {CredentialsService} from "../../../credentials.service";
 import {Router} from "@angular/router";
-import {Albums} from "./models/albums";
-import {Artist} from "./models/artist";
+import {Albums} from "../models/albums";
+import {Artist} from "../models/artist";
 
 class InfosTokenSpotify {
   token: string | null;

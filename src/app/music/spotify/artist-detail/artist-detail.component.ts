@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {SpotifyService} from "../spotify.service";
+import {SpotifyService} from "../services/spotify.service";
 import {Artist} from "../models/artist";
 import {ActivatedRoute} from "@angular/router";
 

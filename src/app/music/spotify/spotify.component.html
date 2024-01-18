@@ -1,15 +1,13 @@
-<div class="container">
+<app-loading-spinner *ngIf="onLoading"/>
+
+<div *ngIf="!onLoading" class="container">
   <div class="row">
-  <div class="col-md-12">
-
-    <a routerLink="new-release-album" class="btn btn-primary">New Release album</a>
-
-    <div class="alert alert-danger" *ngIf="error">
-      <p>{{ error }}</p>
+    <div class="col-md-12">
+      <div class="alert alert-danger" *ngIf="error">
+        <p>{{ error }}</p>
+      </div>
+<!--        <a routerLink="new-release-album" class="btn btn-primary">New Release album</a>-->
     </div>
-
-    <br>
-  </div>
   </div>
   <router-outlet/>
 </div>

@@ -9,6 +9,7 @@ import {YoutubeMusicComponent} from "./music/youtube-music/youtube-music.compone
 import {authGuard} from "./auth/auth.guard";
 import {NewReleaseListComponent} from "./music/spotify/new-release-list/new-release-list.component";
 import {ArtistDetailComponent} from "./music/spotify/artist-detail/artist-detail.component";
+import {SpotifyCredentialsFormComponent} from "./music/spotify/credentials/spotify-credentials-form.component";
 
 const APP_ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const APP_ROUTES: Routes = [
     children: [
       { path: 'apple-music', component: AppleMusicComponent },
       { path: 'spotify', component: SpotifyComponent, children: [
+          { path: 'spotify-credentials', component: SpotifyCredentialsFormComponent },
           { path: 'new-release-album', component: NewReleaseListComponent },
           { path: 'artist/:id', component: ArtistDetailComponent },
         ]

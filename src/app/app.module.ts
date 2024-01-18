@@ -18,12 +18,13 @@ import {YoutubeMusicComponent} from './music/youtube-music/youtube-music.compone
 import {LoadingSpinnerComponent} from './shared/loading-spinner/loading-spinner.component';
 import {SpotifyInterceptor} from "./music/spotify/spotify.interceptor";
 import {AuthInterceptor} from "./auth/auth.interceptor";
-import { CredentialsComponent } from './music/spotify/credentials/credentials.component';
+import { SpotifyCredentialsFormComponent } from './music/spotify/credentials/spotify-credentials-form.component';
 import { NewReleaseListComponent } from './music/spotify/new-release-list/new-release-list.component';
 import { NewReleaseItemComponent } from "./music/spotify/new-release-list/new-release-item/new-release-item.component";
 import { ArtistDetailComponent } from './music/spotify/artist-detail/artist-detail.component';
 import { NewReleaseItemLoadingComponent } from "./music/spotify/new-release-list/new-release-item-loading/new-release-item-loading.component";
 import { PaginatorComponent } from './shared/paginator/paginator.component';
+import { AuthorizeComponent } from './music/spotify/authorize/authorize.component';
 
 @NgModule({
   declarations: [
@@ -36,12 +37,13 @@ import { PaginatorComponent } from './shared/paginator/paginator.component';
     SpotifyComponent,
     YoutubeMusicComponent,
     LoadingSpinnerComponent,
-    CredentialsComponent,
+    SpotifyCredentialsFormComponent,
     NewReleaseListComponent,
     NewReleaseItemComponent,
     ArtistDetailComponent,
     NewReleaseItemLoadingComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    AuthorizeComponent
   ],
   imports: [
     BrowserModule,
