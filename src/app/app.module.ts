@@ -6,7 +6,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {MaterialDesignModule} from "./material-design.module";
 import {AuthComponent} from './auth/auth.component';
 import {HomeComponent} from './home/home.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withFetch} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ReactiveFormsModule} from "@angular/forms";
 import {HeaderComponent} from "./header/header.component";
@@ -26,6 +26,8 @@ import { NewReleaseItemLoadingComponent } from "./music/spotify/new-release-list
 import { PaginatorComponent } from './shared/paginator/paginator.component';
 import { AuthorizeComponent } from './music/spotify/authorize/authorize.component';
 import { ChatComponent } from './chat/chat.component';
+import { MessageCardComponent } from './chat/message-card/message-card.component';
+import { PlaceholderDirective } from './placeholder.directive';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { ChatComponent } from './chat/chat.component';
     NewReleaseItemLoadingComponent,
     PaginatorComponent,
     AuthorizeComponent,
-    ChatComponent
+    ChatComponent,
+    MessageCardComponent,
+    PlaceholderDirective
   ],
   imports: [
     BrowserModule,
@@ -67,6 +71,7 @@ import { ChatComponent } from './chat/chat.component';
       useClass: AuthInterceptor,
       multi: true
     },
+    provideHttpClient(withFetch())
   ],
   bootstrap: [AppComponent]
 })
